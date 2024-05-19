@@ -8,9 +8,9 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState('');
 
-  // Fetch posts from backend
+  // Fetch posts from the backend
   useEffect(() => {
-    axios.get(`${process.env.TWITTER_CLONE_BACKEND_URL}/posts`)
+    axios.get(`${process.env.REACT_APP_TWITTER_CLONE_BACKEND_URL}/posts`)
       .then(response => setPosts(response.data))
       .catch(error => console.error('Error fetching posts:', error));
   }, []);
@@ -18,7 +18,7 @@ function App() {
   // Handle new post submission
   const handlePostSubmit = (e) => {
     e.preventDefault();
-    axios.post(`${process.env.TWITTER_CLONE_BACKEND_URL}/posts`, { content: newPost })
+    axios.post(`${process.env.REACT_APP_TWITTER_CLONE_BACKEND_URL}/posts`, { content: newPost })
       .then(response => setPosts([response.data, ...posts]))
       .catch(error => console.error('Error posting:', error));
     setNewPost('');
