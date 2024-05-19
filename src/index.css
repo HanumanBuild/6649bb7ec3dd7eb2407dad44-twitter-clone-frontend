@@ -1,0 +1,5 @@
+@tailwind base;
+/* Adding Tailwind CSS directives */
+@tailwind components;
+@tailwind utilities;
+/* End of Tailwind CSS directives */
